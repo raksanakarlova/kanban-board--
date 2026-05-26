@@ -1,4 +1,4 @@
-import type { Column }  from "@/types";
+import type { Column } from '@/types'
 
 export const INITIAL_COLUMNS: Column[] = [
   {
@@ -24,7 +24,7 @@ export const INITIAL_COLUMNS: Column[] = [
     cards: [
       {
         id: crypto.randomUUID(),
-        title: 'Buy milk',
+        title: 'Go to the cinema',
         priority: 'low',
       },
       {
@@ -41,7 +41,7 @@ export const INITIAL_COLUMNS: Column[] = [
     cards: [
       {
         id: crypto.randomUUID(),
-        title: 'Buy milk',
+        title: 'Take the pills',
         priority: 'low',
       },
       {

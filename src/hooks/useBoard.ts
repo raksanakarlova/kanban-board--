@@ -5,7 +5,7 @@ import type { Card } from '@/types'
 export function useBoard() {
   const [columns, setColumns] = useState(INITIAL_COLUMNS)
 
-  function addCard(columnId: string, cardData: Omit<Card, 'id'>) {
+  function addCard(columnId: string, cardData: Omit<Card, 'id'>): void {
     const newCard = { id: crypto.randomUUID(), ...cardData }
 
     const result = columns.map((column) =>
@@ -21,10 +21,10 @@ export function useBoard() {
     fromColumnId: string,
     toColumnId: string
   ): void {
-    const foundColumn = columns.find((column) => column.id === fromColumnId);
-    const foundCard = foundColumn?.cards.find((card) => card.id === cardId);
+    const foundColumn = columns.find((column) => column.id === fromColumnId)
+    const foundCard = foundColumn?.cards.find((card) => card.id === cardId)
 
-    if (!foundCard) return;
+    if (!foundCard) return
 
     const result = columns.map((column) => {
       if (column.id === fromColumnId) {
@@ -49,28 +49,28 @@ export function useBoard() {
     const result = columns.map((column) =>
       column.id === columnId
         ? {
-          ...column,
-          cards: column.cards.map((card) =>
-            card.id === cardId ? { ...card, ...updateData } : card
-          ),
-        }
+            ...column,
+            cards: column.cards.map((card) =>
+              card.id === cardId ? { ...card, ...updateData } : card
+            ),
+          }
         : column
-    );
+    )
 
-    setColumns(result);
+    setColumns(result)
   }
 
   function deleteCard(cardId: string, columnId: string): void {
     const result = columns.map((column) =>
       column.id === columnId
         ? {
-          ...column,
-          cards: column.cards.filter((card) => card.id !== cardId),
-        }
+            ...column,
+            cards: column.cards.filter((card) => card.id !== cardId),
+          }
         : column
-    );
-    setColumns(result);
+    )
+    setColumns(result)
   }
 
-  return { columns, addCard, moveCard, editCard, deleteCard };
-};
+  return { columns, addCard, moveCard, editCard, deleteCard }
+}

@@ -15,7 +15,7 @@ export interface BoardProps {
 
 function Board({ columns, onAdd, onMove, onEdit, onDelete }: BoardProps) {
   return (
-    <div>
+    <div className="flex m-auto mt-8">
       {columns.map((column) => (
         <ColumnUi
           key={column.id}

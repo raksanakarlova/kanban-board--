@@ -3,11 +3,12 @@ import type { Column } from '@/types'
 export const INITIAL_COLUMNS: Column[] = [
   {
     id: 'todo',
-    title: 'ToDo',
+    title: 'ToDo:',
     cards: [
       {
         id: crypto.randomUUID(),
         title: 'Buy milk',
+        description: 'купить миндальное молоко',
         priority: 'low',
       },
       {
@@ -20,7 +21,7 @@ export const INITIAL_COLUMNS: Column[] = [
 
   {
     id: 'in-progress',
-    title: 'In Progress',
+    title: 'In Progress:',
     cards: [
       {
         id: crypto.randomUUID(),
@@ -37,7 +38,7 @@ export const INITIAL_COLUMNS: Column[] = [
 
   {
     id: 'done',
-    title: 'Done',
+    title: 'Done:',
     cards: [
       {
         id: crypto.randomUUID(),

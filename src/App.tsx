@@ -5,7 +5,8 @@ function App() {
   const { columns, addCard, moveCard, editCard, deleteCard } = useBoard()
 
   return (
-    <div>
+    <div className="min-h-screen">
+      <h1 className="text-center text-2xl mt-2">Kanban board:</h1>
       <Board
         columns={columns}
         onAdd={addCard}

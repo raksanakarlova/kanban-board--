@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <h1 className="text-center text-2xl mt-2">Kanban board:</h1>
+      <h1 className="text-center text-gray-600 text-2xl mt-2">Kanban board:</h1>
       <Board
         columns={columns}
         onAdd={addCard}

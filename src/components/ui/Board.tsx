@@ -20,6 +20,7 @@ function Board({ columns, onAdd, onMove, onEdit, onDelete }: BoardProps) {
         <ColumnUi
           key={column.id}
           column={column}
+          columns={columns}
           onAdd={onAdd}
           onMove={onMove}
           onEdit={onEdit}

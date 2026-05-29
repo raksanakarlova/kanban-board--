@@ -4,6 +4,7 @@ import AddCardFormUi from './addCardForm'
 
 export interface ColumnProps {
   column: Column
+  columns: Column[]
   onAdd: (columnId: string, cardData: Omit<Card, 'id'>) => void
   onMove: (cardId: string, fromColumnId: string, toColumnId: string) => void
   onEdit: (
@@ -15,9 +16,25 @@ export interface ColumnProps {
 }
 
 function ColumnUi({ column, onAdd, onMove, onEdit, onDelete }: ColumnProps) {
+  function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
+    e.preventDefault()
+  }
+
+  function handleDrop(e: React.DragEvent<HTMLDivElement>) {
+    const cardId = e.dataTransfer.getData('cardId')
+    const fromColumnId = e.dataTransfer.getData('fromColumnId')
+    if (fromColumnId !== column.id) {
+      onMove(cardId, fromColumnId, column.id)
+    }
+  }
+
   return (
-    <div className="flex flex-col min-h-96 bg-gray-50 mx-auto w-100 rounded-md">
-      <h2 className="pt-2 pb-2 bg-gray-200  rounded-md text-center text-xl">
+    <div
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+      className="flex flex-col min-h-96 bg-gray-50 mx-auto w-100 rounded-md"
+    >
+      <h2 className="pt-2 pb-2 bg-gray-200 rounded-md text-center text-xl text-gray-700">
         {column.title}
       </h2>
       <div className="flex flex-col flex-1">

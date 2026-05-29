@@ -1,4 +1,4 @@
-import type { Column } from '@/types'
+import type { Column, Priority } from '@/types'
 
 export const INITIAL_COLUMNS: Column[] = [
   {
@@ -26,7 +26,7 @@ export const INITIAL_COLUMNS: Column[] = [
       {
         id: crypto.randomUUID(),
         title: 'Go to the cinema',
-        priority: 'low',
+        priority: 'medium',
       },
       {
         id: crypto.randomUUID(),
@@ -53,3 +53,9 @@ export const INITIAL_COLUMNS: Column[] = [
     ],
   },
 ]
+
+export const PRIORITY_STYLES: Record<Priority, string> = {
+  low: 'bg-green-100 border-green-200 text-gray-600',
+  medium: 'bg-yellow-100 border-yellow-200 text-gray-600',
+  high: 'bg-red-100 border-red-200 text-gray-600',
+}

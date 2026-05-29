@@ -2,6 +2,21 @@
 
 A task management board for tracking work across multiple status columns — inspired by Trello.
 
+## Features
+
+- **Create cards** — add cards to any column with a title, description, and priority
+- **Priority labels** — low (green), medium (yellow), high (red)
+- **Drag & drop** — move cards between columns by dragging (desktop)
+- **Move select** — move cards via dropdown on mobile
+- **Edit cards** — update title, description, and priority
+- **Delete cards**
+- **Dark theme** — follows system preferences automatically
+- **Responsive** — works on mobile and desktop
+
+## Screenshots
+
+
+
 ## Tech Stack
 
 - React 19
